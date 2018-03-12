@@ -17,7 +17,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cloudera.sparkts</groupId>
   <artifactId>sparkts</artifactId>
-  <version>0.4.0-SNAPSHOT</version>
+  <version>0.5.0</version>
   <packaging>jar</packaging>
   <name>Time Series for Spark</name>
   <description>A library for analyzing large-scale time series data.</description>
@@ -54,18 +54,18 @@
     <java.version>1.8</java.version>
     <scala.minor.version>2.11</scala.minor.version>
     <scala.complete.version>2.11.8</scala.complete.version>
-    <spark.version>2.0.0</spark.version>
-    <breeze.version>0.12</breeze.version>
+    <spark.version>2.3.0</spark.version>
+    <breeze.version>0.13.2</breeze.version>
   </properties>
 
   <distributionManagement>
     <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <id>artifactory-dev</id>
+      <url>http://teamwork.kmtongji.com/artifactory/maven-dev-local</url>
     </snapshotRepository>
     <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>artifactory-release</id>
+      <url>http://teamwork.kmtongji.com/artifactory/maven-release-local</url>
     </repository>
     <site>
       <id>sparkts.website</id>
@@ -76,6 +76,7 @@
   
   <build>
     <plugins>
+			<!--
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -87,6 +88,7 @@
            <autoReleaseAfterClose>true</autoReleaseAfterClose>
         </configuration>
       </plugin>
+			-->
       <plugin>
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
@@ -339,6 +341,7 @@
           </execution>
         </executions>
       </plugin>
+			<!--
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
@@ -357,6 +360,7 @@
           <executable>gpg2</executable>
         </configuration>
       </plugin>
+			-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
